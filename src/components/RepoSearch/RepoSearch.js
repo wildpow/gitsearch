@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { displayRepos } from '../../actions';
-// import RepoList from '../RepoList/RepoList';
+import RepoList from '../RepoList/RepoList';
 import './RepoSearch.css';
 
 class RepoSearch extends Component {
@@ -36,10 +36,10 @@ class RepoSearch extends Component {
                            type="submit"
                            >Submit</button>
                            <ul>
-                               {/* {console.log(this.props.repos.items)} */}
+        
                            {this.props.repos.items.map((repo) => {
                                return (
-                                   <li repo={repo} index={repo.id} key={repo.id}>{repo.full_name}</li>
+                                   <RepoList repo={repo} index={repo.id} key={repo.id} />
                                )
                            } )}
                         </ul>
